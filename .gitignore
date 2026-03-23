@@ -1,0 +1,8 @@
+state/manifest.json
+state/spark-events/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+*.code-workspace
