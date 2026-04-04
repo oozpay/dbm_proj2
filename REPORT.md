@@ -107,9 +107,9 @@ This enrichment adds readable zone names to the trip data, making the Gold analy
 ### Checkpoint path and what it stores
 
 Each streaming query has its own checkpoint directory:
-* Bronze: `/home/jovyan/checkpoints/bronze`
-* Silver: `/home/jovyan/checkpoints/silver`
-* Gold: `/home/jovyan/checkpoints/gold`
+* Bronze: `/home/jovyan/project/checkpoints/bronze`
+* Silver: `/home/jovyan/project/checkpoints/silver`
+* Gold: `/home/jovyan/project/checkpoints/gold`
 
 These checkpoints store Structured Streaming progress and state. In particular, they keep the information needed for each query to resume correctly after restart. For the Kafka source, this includes the source progress already processed by the pipeline. For stateful transformations, checkpointing also preserves execution state between runs.
 
