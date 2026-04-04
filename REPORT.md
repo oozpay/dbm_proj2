@@ -169,6 +169,8 @@ The Gold table is partitioned by day of the hourly window start time, because Go
 
 To test restart correctness, the pipeline was run until all three layers contained data. Row counts were recorded, the streaming queries were stopped, and then restarted using the same checkpoint directories. The Kafka producer was not run during the restart window.
 
+*Note on Draining:* After stopping the producer, the streams were left running for several minutes to "drain" any buffered or in-flight data. This ensured all records were fully committed to the Iceberg tables before the "Before restart" counts were captured, preventing artificial row count jumps during the restart phase.
+
 ### Row counts before and after restart
 
 | Layer  | Before restart | After restart |
@@ -178,6 +180,7 @@ To test restart correctness, the pipeline was run until all three layers contain
 | Gold   |           16075 |          16075 |
 
 Because the counts did not change after restart, the pipeline resumed from checkpoint state without duplicating previously processed data.
+
 
 
 ## 6. Custom scenario
