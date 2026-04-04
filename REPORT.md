@@ -226,7 +226,9 @@ Observed output from the recorded run:
 docker compose up -d
 
 # Step 2: Start the producer
-python produce.py
+# Optional: Use --rate (e.g., --rate 100) to speed up data ingestion 
+# and reach weekend records faster.
+python produce.py --loop --rate 100
 
 # Step 3: Run the pipeline
 # Open the Jupyter notebook and run all cells
