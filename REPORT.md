@@ -239,6 +239,7 @@ Additional notes:
 * The taxi data files must be present in `data/`.
 * The taxi zone lookup table must be available to the notebook.
 * The notebook runs the Bronze, Silver, and Gold streaming queries end-to-end.
+* The numerical outputs and row counts provided in this report represent a representative subset of the NYC Taxi dataset processed to verify pipeline logic and streaming integrity. They do not reflect the total volume of the entire dataset, as the primary goal was to validate the architecture and custom scenario functionality.
 
 ### `.env` values
 
